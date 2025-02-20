@@ -1,5 +1,6 @@
 package com.example.banca_movil_service.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
 @Entity
@@ -8,7 +9,6 @@ public class Transaction {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private Long payment_id;
     private Long card_id;
     private double amount;
     private String type;
@@ -20,9 +20,7 @@ public class Transaction {
 
     public Transaction() {}
 
-    public Transaction(Long payment_id, Long card_id, double amount, String type, String status, Payment payment) {
-        this.id = id;
-        this.payment_id = payment_id;
+    public Transaction(Long card_id, double amount, String type, String status, Payment payment) {
         this.card_id = card_id;
         this.amount = amount;
         this.type = type;
@@ -36,14 +34,6 @@ public class Transaction {
 
     public void setId(Long id) {
         this.id = id;
-    }
-
-    public Long getPayment_id() {
-        return payment_id;
-    }
-
-    public void setPayment_id(Long payment_id) {
-        this.payment_id = payment_id;
     }
 
     public double getAmount() {

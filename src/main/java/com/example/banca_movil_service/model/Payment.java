@@ -20,15 +20,14 @@ public class Payment {
     @JsonIgnore
     private List<Transaction> transactions;
 
+    public Payment() {}
+
     public Payment(Long emit_card_id, Long receptor_card_id, double amount, String status, List<Transaction> transactions) {
         this.emit_card_id = emit_card_id;
         this.receptor_card_id = receptor_card_id;
         this.amount = amount;
         this.status = status;
         this.transactions = transactions;
-    }
-
-    public Payment() {
     }
 
     public Long getEmit_card_id() {

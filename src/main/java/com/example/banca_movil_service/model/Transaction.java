@@ -20,7 +20,7 @@ public class Transaction {
 
     public Transaction() {}
 
-    public Transaction(Long id, Long payment_id, Long card_id, double amount, String type, String status, Payment payment) {
+    public Transaction(Long payment_id, Long card_id, double amount, String type, String status, Payment payment) {
         this.id = id;
         this.payment_id = payment_id;
         this.card_id = card_id;

@@ -20,8 +20,7 @@ public class Payment {
     @JsonIgnore
     private List<Transaction> transactions;
 
-    public Payment(Long id, Long emit_card_id, Long receptor_card_id, double amount, String status, List<Transaction> transactions) {
-        this.id = id;
+    public Payment(Long emit_card_id, Long receptor_card_id, double amount, String status, List<Transaction> transactions) {
         this.emit_card_id = emit_card_id;
         this.receptor_card_id = receptor_card_id;
         this.amount = amount;
